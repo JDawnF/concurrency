@@ -20,7 +20,7 @@ public class SemaphoreExample1 {
 //            Thread.sleep(1);  //不应该放在这里
             exec.execute(() -> {
                 try {
-                    semaphore.acquire(3); // 获取n个许可
+                    semaphore.acquire(3); // 获取n个许可，表示只有几个线程可以执行
                     test(threadNum);//需要并发控制的内容
                     semaphore.release(3); // 释放n个许可
                 } catch (Exception e) {
